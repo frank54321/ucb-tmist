@@ -9,6 +9,7 @@ export default Route.extend({
 	beforeModel(transition) {
 		const ajax = this.get('ajax'),
 			{ queryParams } = transition,
+			cookies = this.get('cookies'),
 			applicationAdapter = this.get('store').adapterFor('application');
 
 		let version = `${applicationAdapter.get('namespace')}`,
@@ -16,7 +17,6 @@ export default Route.extend({
 			resource = 'GenerateAccessToken',
 			scope = 'App/System:[UCB]',
 			url = '',
-			cookies = this.get('cookies'),
 			redirectUri = `${applicationAdapter.get('host')}/oauth-callback`;
 
 		if (queryParams.code && queryParams.state) {
