@@ -1,0 +1,20 @@
+.mission-info {
+	width: 270px;
+	height: 138px;
+	@extend %depth-z200;
+	cursor: pointer;
+
+	.phase {
+		@extend %p-secondary;
+	}
+
+	&.multiple-phase::after {
+		// content: '';
+		// border: 2px solid red;
+		// width: 222px;
+		left: 80px;
+		bottom: 5px;
+		width: 50%;
+		height: 35%;
+	}
+}
